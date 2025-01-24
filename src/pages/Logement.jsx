@@ -25,11 +25,11 @@ function Logement() {
   useEffect(() => {
     if (logements.length > 0) {
       const found = logements.find((logement) => logement.id === id);
-      setLogement(found);
-
       if (!found) {
         navigate('/404');
+        return;
       }
+      setLogement(found);
     }
   }, [logements, id, navigate]);
 

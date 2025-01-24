@@ -12,9 +12,11 @@
   height: 700px;
 }
 
-@media (max-width: 375px) {
+// @media (max-width: 375px) {
+@media (max-width: 640px) {
   .container-cards {
     max-width: 335px;
+    max-width: 100%;
     margin: 27px auto;
     padding: 0;
     background-color: transparent;

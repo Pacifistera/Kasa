@@ -94,9 +94,11 @@
   }
 }
 
-@media (max-width: 375px) {
+// @media (max-width: 375px) {
+@media (max-width: 640px) {
   .bloc-logement {
     max-width: 335px;
+    max-width: 100%;
     margin: 10px 13px;
     position: relative;
     box-sizing: border-box;

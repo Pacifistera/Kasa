@@ -1,19 +1,23 @@
+import logements from '../assets/logements.json';
+
 async function getDataLogements() {
-  try {
-    // Utilisez le chemin correct vers votre fichier JSON
-    const response = await fetch('/src/assets/logements.json');
+  // try {
+  //   // Utilisez si vrai fetch vers api
+  //   const response = await fetch(
+  //     'https://pacifistera.github.io/kasa/assets/logements.json'
+  //   );
 
-    // Vérifiez si la réponse est OK
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+  //   if (!response.ok) {
+  //     throw new Error(`HTTP error! status: ${response.status}`);
+  //   }
 
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Erreur lors du chargement des données:', error);
-    return [];
-  }
+  //   const data = await response.json();
+  //   return data;
+  // } catch (error) {
+  //   console.error('Erreur lors du chargement des données:', error);
+  //   return [];
+  // }
+  return logements;
 }
 
 export default getDataLogements;
