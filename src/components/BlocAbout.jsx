@@ -1,6 +1,7 @@
 import '../styles/blocAbout.scss';
 import arrow from '../assets/chap.svg';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 function BlocAbout({ title, text }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,5 +30,10 @@ function BlocAbout({ title, text }) {
     </div>
   );
 }
+
+BlocAbout.propTypes = {
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+};
 
 export default BlocAbout;

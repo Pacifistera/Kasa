@@ -31,7 +31,7 @@ function Logement() {
         navigate('/404');
       }
     }
-  }, [logements, id]);
+  }, [logements, id, navigate]);
 
   // Protection contre le rendu avant le chargement des données
   if (!logement) {

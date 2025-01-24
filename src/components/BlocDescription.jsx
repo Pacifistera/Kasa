@@ -1,6 +1,7 @@
 import arrow from '../assets/chap.svg';
 import '../styles/BlocDescription.scss';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 function BlocDescription({ title, description }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,5 +31,10 @@ function BlocDescription({ title, description }) {
     </div>
   );
 }
+
+BlocDescription.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 export default BlocDescription;

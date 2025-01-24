@@ -8,7 +8,7 @@ function Error404() {
     <div className="bloc-error">
       <h1>404</h1>
       <p>{textError}</p>
-      <NavLink to="/">Retourner sur la page d'accueil</NavLink>
+      <NavLink to="/">Retourner sur la page d&apos;accueil</NavLink>
     </div>
   );
 }

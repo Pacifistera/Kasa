@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../styles/Caroussel.scss';
 import arrowLeft from '../assets/arrow-left.svg';
 import arrowRight from '../assets/arrow_right.svg';
+import PropTypes from 'prop-types';
 
 function Caroussel({ pictures }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -55,5 +56,9 @@ function Caroussel({ pictures }) {
     </div>
   );
 }
+
+Caroussel.propTypes = {
+  pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Caroussel;

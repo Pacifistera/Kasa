@@ -1,6 +1,7 @@
 import arrow from '../assets/chap.svg';
 import '../styles/BlocEquip.scss';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 function BlocEquip({ title, equipments }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,5 +33,10 @@ function BlocEquip({ title, equipments }) {
     </div>
   );
 }
+
+BlocEquip.propTypes = {
+  title: PropTypes.string.isRequired,
+  equipments: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default BlocEquip;

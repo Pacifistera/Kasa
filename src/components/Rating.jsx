@@ -1,7 +1,7 @@
-import React from 'react';
 import starFull from '../assets/star-full.svg';
 import starEmpty from '../assets/star-empty.svg';
 import '../styles/Rating.scss';
+import PropTypes from 'prop-types';
 
 function Rating({ rating }) {
   const stars = [1, 2, 3, 4, 5];
@@ -19,5 +19,9 @@ function Rating({ rating }) {
     </div>
   );
 }
+
+Rating.propTypes = {
+  rating: PropTypes.number.isRequired,
+};
 
 export default Rating;
