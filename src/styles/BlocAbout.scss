@@ -57,7 +57,8 @@
   background-color: #ff6060;
   border-radius: 5px;
   margin: 0 auto;
-  width: 1024px;
+  width: 100%;
+  max-width: 1024px;
   min-height: 52px;
   height: auto;
 
@@ -88,13 +89,13 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 640px) {
   .container-about {
     margin: 0 0 20px 0;
   }
 
   .container-bloc-about {
-    max-width: 335px;
+    width: 100%;
     min-height: 30px;
 
     img {
@@ -110,7 +111,6 @@
   }
 
   .text-about {
-    max-width: 335px;
     width: 100%;
   }
 }

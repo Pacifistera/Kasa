@@ -1,7 +1,8 @@
 .bloc-equip {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  width: 100%;
+  max-width: 45%;
 }
 
 @keyframes slideDown {
@@ -58,7 +59,7 @@
   background-color: #ff6060;
   border-radius: 5px;
   margin: 0 auto 0px auto;
-  width: 582px;
+  width: 100%;
   min-height: 52px;
   height: auto;
 
@@ -89,13 +90,13 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 640px) {
   .bloc-equip {
-    max-width: 335px;
+    max-width: 100%;
   }
 
   .bloc-equip-title {
-    max-width: 335px;
+    max-width: 100%;
     min-height: 32px;
 
     img {
