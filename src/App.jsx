@@ -1,35 +1,82 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import * as React from 'react';
+import { createRoot } from 'react-dom/client';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+  Outlet,
+} from 'react-router-dom';
+import { ErrorBoundary } from 'react-error-boundary';
 
-function App() {
-  const [count, setCount] = useState(0)
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Apropos from './pages/Apropos';
+import Error404 from './pages/404';
+import Logement from './pages/Logement';
+
+function fallbackRender({ error, resetErrorBoundary }) {
+  // Call resetErrorBoundary() to reset the error boundary and retry the render.
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre style={{ color: 'red' }}>{error.message}</pre>
+    </div>
+  );
 }
 
-export default App
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    errorElement: <Error404 />,
+    children: [
+      {
+        path: '/',
+        element: (
+          <ErrorBoundary>
+            <Home />
+          </ErrorBoundary>
+        ),
+      },
+      {
+        path: '/contact',
+        element: (
+          <ErrorBoundary fallback="Oups Erreur">
+            <Apropos />
+          </ErrorBoundary>
+        ),
+      },
+      {
+        path: '/fiche-logement/:id',
+        element: <Logement />,
+      },
+      {
+        path: '/404',
+        element: <Error404 />,
+      },
+    ],
+  },
+]);
+
+// createRoot(document.getElementById('root')).render(
+//   <RouterProvider router={router} />
+// );
+
+function Layout() {
+  return (
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  );
+}
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;

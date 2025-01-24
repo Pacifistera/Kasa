@@ -1,0 +1,25 @@
+.container-cards {
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  max-width: 1240px;
+  margin: 50px auto;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 50px;
+  justify-content: center;
+  overflow-y: scroll;
+  height: 700px;
+}
+
+@media (max-width: 375px) {
+  .container-cards {
+    max-width: 335px;
+    margin: 27px auto;
+    padding: 0;
+    background-color: transparent;
+    gap: 20px;
+    border-radius: 10px;
+    flex-direction: columns;
+  }
+}
